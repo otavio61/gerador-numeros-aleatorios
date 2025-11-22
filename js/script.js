@@ -17,9 +17,9 @@ generateButton.addEventListener("click", () => {
 //   renderMatchCount(matchCount, resultContainer)
 // }
 
-let lista = []
-
 function numerosAleatorios() {
+  let lista = []
+
   while(lista.length < 10){
     numero = new Uint8Array(1)
     window.crypto.getRandomValues(numero)
