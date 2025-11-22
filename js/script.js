@@ -1,11 +1,17 @@
-const generateButton = document.getElementById("botao-gerar")
+const botaoGerar6 = document.getElementById("botao-gerar6")
+const botaoGerar10 = document.getElementById("botao-gerar10")
 const numbersContainer = document.getElementById("numeros")
 // const resultInput = document.getElementById("result-input")
 // const resultContainer = document.getElementById("result-container")
 
-generateButton.addEventListener("click", () => {
+botaoGerar6.addEventListener("click", () => {
   numbersContainer.innerHTML = ""
-  renderizarNumeros(numerosAleatorios(), numbersContainer)
+  renderizarNumeros(numerosAleatorios(6), numbersContainer)
+})
+
+botaoGerar10.addEventListener("click", () => {
+  numbersContainer.innerHTML = ""
+  renderizarNumeros(numerosAleatorios(10), numbersContainer)
 })
 
 // resultInput.addEventListener("input", compareNumbers)
@@ -17,10 +23,10 @@ generateButton.addEventListener("click", () => {
 //   renderMatchCount(matchCount, resultContainer)
 // }
 
-function numerosAleatorios() {
+function numerosAleatorios(num) {
   let lista = []
 
-  while(lista.length < 10){
+  while(lista.length < num){
     numero = new Uint8Array(1)
     window.crypto.getRandomValues(numero)
 
